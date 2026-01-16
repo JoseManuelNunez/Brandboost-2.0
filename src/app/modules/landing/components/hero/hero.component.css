@@ -1,0 +1,9 @@
+/* Hero Component Styles */
+
+.header-blur {
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: linear-gradient(91deg, rgba(255, 255, 255, 0.20) 6.45%, rgba(255, 255, 255, 0.02) 79.76%);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(20px);
+}
