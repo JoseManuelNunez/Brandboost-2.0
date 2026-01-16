@@ -1,0 +1,39 @@
+<div class="table-container">
+  <div class="table-header">
+    <h2 class="title">{{ title }}</h2>
+  </div>
+
+  <div class="services-table">
+    <div class="table-labels">
+      <div class="label-cell">Servicio</div>
+      <div class="label-cell">Categoría</div>
+      <div class="label-cell">Duración</div>
+      <div class="label-cell">Precio</div>
+      <div class="label-cell">Estado</div>
+      <div class="label-cell actions-cell">Acciones</div>
+    </div>
+
+    <div class="table-rows">
+      <div class="service-row" *ngFor="let item of services">
+        <div class="row-cell name-cell" data-label="Servicio">{{ item.nombre }}</div>
+        <div class="row-cell category-cell" data-label="Categoría">{{ item.categoria }}</div>
+        <div class="row-cell duration-cell" data-label="Duración">{{ item.duracion }}</div>
+        <div class="row-cell price-cell" data-label="Precio">{{ item.precio }}</div>
+        <div class="row-cell status-cell" data-label="Estado">
+          <div class="status-badge" [ngClass]="getStatusClass(item.estado)">
+            {{ item.estado }}
+          </div>
+        </div>
+        <div class="row-cell actions-cell" data-label="Acciones">
+          <button class="icon-btn" aria-label="Opciones">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="12" cy="5" r="1"></circle>
+              <circle cx="12" cy="19" r="1"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,36 @@
-/* Servicios styles */
+.servicios-page {
+  padding: 1rem;
+  height: 100%;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.table-section {
+  width: 100%;
+}
+
+.form-section {
+  width: 100%;
+}
+
+@media (max-width: 1280px) {
+  .servicios-grid {
+    grid-template-columns: 1fr 300px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section {
+    order: -1; 
+  }
+}
