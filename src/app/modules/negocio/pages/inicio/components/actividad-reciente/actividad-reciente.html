@@ -1,0 +1,10 @@
+<div class="recent-activity-container">
+  <h2 class="section-title">Actividad reciente</h2>
+  
+  <div class="activity-list">
+    <app-actividad-item 
+      *ngFor="let activity of activities" 
+      [activity]="activity">
+    </app-actividad-item>
+  </div>
+</div>

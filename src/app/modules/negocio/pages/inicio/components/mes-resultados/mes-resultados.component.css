@@ -1,0 +1,90 @@
+.result-card {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('/assets/fondos/fondo_resultado-mes.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-content {
+  padding: 3rem;
+  flex: 1;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0.5rem 0 2rem 0;
+}
+
+.action-btn {
+  background-color: #FFD700; /* Yellow */
+  color: #000;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+.stats-bar {
+  background: rgba(43, 40, 77, 0.7); /* Dark purple/blue tint */
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem;
+  border-radius: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #DDD;
+  font-weight: 500;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

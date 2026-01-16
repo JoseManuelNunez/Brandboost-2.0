@@ -1,1 +1,17 @@
-/* Styles for inicio page */
+.inicio-grid {
+  display: grid;
+  grid-template-columns: 1fr 25vw;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-column {
+  /* Side column takes the height of its content */
+  width: 100%;
+}
