@@ -1,1 +1,41 @@
-/* Clientes styles */
+.clientes-page {
+  padding: 1rem;
+  height: 100%;
+}
+
+.top-section {
+  margin-bottom: 2rem;
+}
+
+.clientes-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.table-section {
+  width: 100%;
+}
+
+.form-section {
+  width: 100%;
+}
+
+@media (max-width: 1280px) {
+  .clientes-grid {
+    grid-template-columns: 1fr 320px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .clientes-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .form-section {
+    order: -1;
+  }
+}

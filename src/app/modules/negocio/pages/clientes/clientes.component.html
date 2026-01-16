@@ -1,1 +1,17 @@
-<h1>Clientes</h1>
+<div class="clientes-page">
+  <div class="top-section">
+    <app-detalles-cliente [cliente]="clienteSeleccionado"></app-detalles-cliente>
+  </div>
+
+  <div class="clientes-grid">
+    <div class="table-section">
+      <app-clientes-table 
+        [clientes]="clientes" 
+        (select)="onClienteSelected($event)"
+      ></app-clientes-table>
+    </div>
+    <div class="form-section">
+      <app-nuevo-cliente></app-nuevo-cliente>
+    </div>
+  </div>
+</div>

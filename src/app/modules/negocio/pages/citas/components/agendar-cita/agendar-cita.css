@@ -46,8 +46,8 @@ input[type="date"],
 input[type="time"],
 select,
 textarea {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid #BC8E2C; 
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(188, 142, 44, 0.4); 
   border-radius: 12px;
   padding: 0.85rem 1rem;
   color: white;
@@ -71,6 +71,19 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   padding: 0;
   cursor: pointer;
   opacity: 0;
+}
+
+/* Chrome, Edge, and Safari have limited styling capabilities for native pickers. 
+   Removing the custom hover effects as requested. */
+input[type="date"]::-webkit-datetime-edit,
+input[type="time"]::-webkit-datetime-edit {
+  color: white;
+  padding: 0;
+}
+
+select option {
+  background-color: #0d0d17; /* Darker background to match the app's depth */
+  color: white;
 }
 
 input:focus,

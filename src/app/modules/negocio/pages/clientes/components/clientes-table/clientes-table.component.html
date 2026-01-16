@@ -1,0 +1,28 @@
+<div class="table-container">
+  <div class="table-header">
+    <h2 class="title">Clientes</h2>
+    <p class="subtitle">Gestiona datos y preferencias de tus clientes.</p>
+  </div>
+
+  <div class="table-wrapper">
+    <div class="table-labels">
+      <div class="label-cell">Cliente</div>
+      <div class="label-cell">Fecha de Registro</div>
+      <div class="label-cell">Nivel</div>
+      <div class="label-cell">Descripción</div>
+    </div>
+
+    <div class="table-rows">
+      <div 
+        class="customer-row" 
+        *ngFor="let item of clientes" 
+        (click)="onRowClick(item)"
+      >
+        <div class="row-cell" data-label="Cliente">{{ item.nombre }}</div>
+        <div class="row-cell" data-label="Fecha de Registro">{{ item.fechaRegistro }}</div>
+        <div class="row-cell" data-label="Nivel">{{ item.nivel }}</div>
+        <div class="row-cell" data-label="Descripción">{{ item.descripcion }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="details-container" *ngIf="cliente">
+  <div class="info-section">
+    <h2 class="section-title">Detalles del cliente</h2>
+    
+    <div class="info-grid">
+      <div class="info-item">
+        <label>Teléfono</label>
+        <p>{{ cliente.telefono }}</p>
+      </div>
+      
+      <div class="info-item">
+        <label>Email</label>
+        <p>{{ cliente.email }}</p>
+      </div>
+      
+      <div class="info-item">
+        <label>Dirección</label>
+        <p>{{ cliente.direccion }}</p>
+      </div>
+      
+      <div class="info-item">
+        <label>Descripción</label>
+        <p>{{ cliente.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="avatar-wrapper">
+      <img src="assets/user/profile.png" alt="Avatar">
+    </div>
+    
+    <h3 class="profile-name">{{ cliente.nombre }}</h3>
+    
+    <div class="status-tag">
+      {{ cliente.tipo }}
+      <span class="dot"></span>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-badge">
+        <span class="stat-value">{{ cliente.ventas }}</span>
+        <span class="stat-label">Ventas</span>
+      </div>
+      <div class="stat-badge">
+        <span class="stat-value">{{ cliente.ordenes }}</span>
+        <span class="stat-label">Ordenes</span>
+      </div>
+      <div class="stat-badge">
+        <span class="stat-value">{{ cliente.pagado }}</span>
+        <span class="stat-label">Pagado</span>
+      </div>
+    </div>
+  </div>
+</div>
