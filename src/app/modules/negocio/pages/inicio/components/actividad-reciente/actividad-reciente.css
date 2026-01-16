@@ -22,15 +22,6 @@
   flex: 1;
   overflow-y: auto;
   padding-right: 0.5rem;
-  
   -webkit-overflow-scrolling: touch;
 }
 
-.activity-list::-webkit-scrollbar {
-  display: none;
-}
-
-.activity-list {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}

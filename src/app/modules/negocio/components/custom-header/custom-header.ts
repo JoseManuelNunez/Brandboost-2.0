@@ -1,13 +1,16 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-custom-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './custom-header.html',
   styleUrl: './custom-header.css',
 })
 export class CustomHeader {
+  @Input() showMenuButton = false;
   @Output() menuClick = new EventEmitter<void>();
 
   onMenuClick() {

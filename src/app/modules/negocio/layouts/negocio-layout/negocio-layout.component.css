@@ -7,9 +7,21 @@
 }
 
 .sidebar {
-  width: 280px;
+  width: 320px; /* Increased to account for padding */
   flex-shrink: 0;
   z-index: 100;
+  padding: 1.5rem 0 1.5rem 1.5rem; /* Space around the floating card */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  overflow: visible; /* To show the toggle button hanging off the edge */
+}
+
+.sidebar:not(.open) {
+  width: 0;
+  transform: translateX(-320px);
+  opacity: 0;
+  padding-left: 0;
 }
 
 .sidebar-overlay {
@@ -35,14 +47,17 @@
   .sidebar {
     position: fixed;
     top: 0;
-    left: -300px;
+    left: -100%;
+    margin-left: 0 !important;
     height: 100vh;
-    transition: left 0.3s ease;
+    width: 280px;
     background: linear-gradient(180deg, #0a0015 0%, #041560 100%);
   }
 
   .sidebar.open {
     left: 0;
+    visibility: visible;
+    opacity: 1;
   }
 
   .sidebar-overlay {

@@ -12,7 +12,7 @@ import { CustomHeader } from '../../components/custom-header/custom-header';
   styleUrl: './negocio-layout.component.css'
 })
 export class NegocioLayoutComponent {
-  sidebarOpen = false;
+  sidebarOpen = window.innerWidth > 1024;
 
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
