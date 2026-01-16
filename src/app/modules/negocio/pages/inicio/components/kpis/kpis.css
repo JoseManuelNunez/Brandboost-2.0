@@ -104,3 +104,83 @@
   width: 16px;
   height: 16px;
 }
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .kpis-container {
+    border-radius: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .kpis-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .properties-btn {
+    align-self: flex-start;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .kpis-container {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .kpis-header {
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .properties-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .kpis-cards {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .kpi-card {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .kpi-label {
+    font-size: 0.8rem;
+  }
+
+  .kpi-value {
+    font-size: 0.9rem;
+  }
+
+  .kpi-trend {
+    font-size: 0.75rem;
+  }
+
+  .trend-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .properties-btn svg:first-child {
+    display: none;
+  }
+}

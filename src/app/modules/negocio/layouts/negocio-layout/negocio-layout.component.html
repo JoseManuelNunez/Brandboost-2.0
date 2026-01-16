@@ -1,9 +1,14 @@
 <div class="layout-container">
-  <aside class="sidebar">
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" [class.active]="sidebarOpen" (click)="closeSidebar()"></div>
+  
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.open]="sidebarOpen">
     <app-custom-sidebar></app-custom-sidebar>
   </aside>
+  
   <div class="main-area">
-    <app-custom-header></app-custom-header>
+    <app-custom-header (menuClick)="toggleSidebar()"></app-custom-header>
     <main class="content">
       <router-outlet></router-outlet>
     </main>
