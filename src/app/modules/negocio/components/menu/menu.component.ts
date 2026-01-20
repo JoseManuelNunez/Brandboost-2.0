@@ -1,29 +1,25 @@
-import { Component, Output, EventEmitter, Input, inject, signal } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../auth/services/auth.service';
-import { MenuComponent } from '../menu/menu.component';
 
 @Component({
-  selector: 'app-custom-header',
+  selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, MenuComponent],
-  templateUrl: './custom-header.html',
-  styleUrl: './custom-header.css',
+  imports: [CommonModule],
+  templateUrl: './menu.component.html',
+  styleUrl: './menu.component.css'
 })
-export class CustomHeader {
-  @Input() showMenuButton = false;
-  @Output() menuClick = new EventEmitter<void>();
-
+export class MenuComponent {
   private authService = inject(AuthService);
+
+  // Inputs/Outputs if needed, but for now it can directly use AuthService
   currentUser = this.authService.currentUser;
-  isProfileMenuOpen = signal(false);
 
-  onMenuClick() {
-    this.menuClick.emit();
-  }
+  onCloseMenu = output();
 
-  toggleProfileMenu() {
-    this.isProfileMenuOpen.update(v => !v);
+  logout() {
+    this.authService.logout();
+    this.onCloseMenu.emit();
   }
 
   get initial(): string {

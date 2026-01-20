@@ -1,0 +1,247 @@
+.auth-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(249deg, #080011 17.34%, #062280 99.48%);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-blur {
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: linear-gradient(91deg, rgba(255, 255, 255, 0.20) 6.45%, rgba(255, 255, 255, 0.02) 79.76%);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(20px);
+}
+
+.auth-card {
+  border-radius: 2.5rem;
+  background: linear-gradient(113deg, rgba(255, 255, 255, 0.20) 5.84%, rgba(255, 255, 255, 0.02) 76.1%);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(20px);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  text-align: center;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+/* Toggle Switch */
+.toggle-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 4px;
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 4px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.toggle-btn.active {
+  background: #fbbf24;
+  color: #000;
+}
+
+.arrow-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Forms */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: white;
+  color: #1e293b;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.input-group input::placeholder {
+  color: #94a3b8;
+}
+
+.row-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.row-inputs .input-group {
+  flex: 1;
+}
+
+/* Buttons */
+.btn-primary {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.google-logo {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer */
+.auth-footer {
+  margin-top: 1rem;
+}
+
+.auth-footer p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.auth-footer a {
+  color: #fbbf24;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Animations */
+.animate-fade {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Register specific layout adjustment */
+/* Invalid Input Styles */
+.input-group.invalid input {
+  border: 1px solid #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.error-alert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Loader */
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

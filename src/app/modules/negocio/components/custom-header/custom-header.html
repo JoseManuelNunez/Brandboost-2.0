@@ -7,7 +7,7 @@
   </button>
 
   <div class="user-greeting">
-    <h1>Hola Jorge</h1>
+    <h1>Hola {{ currentUser()?.nombre || 'usuario' }}</h1>
     <p class="date-text">Viernes, 2 Ene 2025</p>
   </div>
   
@@ -24,8 +24,25 @@
         </svg>
     </button>
     
-    <div class="user-profile">
-      <img src="assets/user/profile.png" alt="User Profile" class="avatar">
+    <div class="user-profile relative">
+      @if (currentUser()?.image_profile) {
+        <img 
+          [src]="currentUser()?.image_profile" 
+          alt="User Profile" 
+          class="avatar cursor-pointer"
+          (click)="toggleProfileMenu()">
+      } @else {
+        <div 
+          class="avatar-initial cursor-pointer" 
+          [style.background-color]="avatarColor"
+          (click)="toggleProfileMenu()">
+          {{ initial }}
+        </div>
+      }
+      
+      @if (isProfileMenuOpen()) {
+        <app-menu (onCloseMenu)="isProfileMenuOpen.set(false)"></app-menu>
+      }
     </div>
   </div>
 </header>

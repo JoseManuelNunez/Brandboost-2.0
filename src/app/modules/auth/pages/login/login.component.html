@@ -1,0 +1,123 @@
+<div class="auth-wrapper relative">
+  <header class="absolute top-0 left-0 w-full z-20 px-6 py-6 md:px-12 flex justify-between items-start md:items-center">
+    <div class="flex flex-col cursor-pointer" (click)="navegarInicio()">
+      <div class="flex items-center gap-1">
+        <img src="/assets/logos/brandboostLogo.webp" alt="BrandBoost Logo" class="h-10 w-auto object-contain" />
+      </div>
+    </div>
+
+    <nav class="hidden lg:flex items-center gap-6 px-6 py-2.5 text-white/90 text-sm font-medium header-blur">
+      <a (click)="navegarInicio()" class="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        Inicio
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-white transition-colors">
+        Nuestros servicios
+        <svg class="w-3 h-3 pt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+      </a>
+      <a href="#" class="hover:text-white transition-colors">Contactanos</a>
+    </nav>
+
+    <button (click)="navegarLogin()" class="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-semibold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-yellow-500/20 transition-all flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+      Iniciar sesión
+    </button>
+  </header>
+
+  <div class="auth-card" [class.register-mode]="!isLogin()">
+    <div class="auth-header">
+      <h1>{{ isLogin() ? 'Inicia sesión' : 'Crear una cuenta' }}</h1>
+      <p>{{ isLogin() ? 'Accede a tu cuenta de usuario' : 'Es momento de impulsarte, comencemos a elevar tu marca a lo mas alto.' }}</p>
+    </div>
+
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+      <button 
+        class="toggle-btn" 
+        [class.active]="isLogin()"
+        (click)="toggleAuth(true)">
+        Iniciar
+        @if (isLogin()) {
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        }
+      </button>
+      <button 
+        class="toggle-btn" 
+        [class.active]="!isLogin()"
+        (click)="toggleAuth(false)">
+        Crear cuenta
+        @if (!isLogin()) {
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        }
+      </button>
+    </div>
+
+    <div class="form-content">
+      <!-- Error General Message -->
+      @if (errorMessage()) {
+        <div class="error-alert animate-fade">
+          {{ errorMessage() }}
+        </div>
+      }
+
+      @if (isLogin()) {
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="animate-fade">
+          <div class="input-group" [class.invalid]="isValidField(loginForm, 'email')">
+            <input type="email" formControlName="email" placeholder="Correo Electrónico">
+          </div>
+          <div class="input-group" [class.invalid]="isValidField(loginForm, 'password')">
+            <input type="password" formControlName="password" placeholder="Contraseña">
+          </div>
+
+          <button type="submit" class="btn-primary" [disabled]="isLoading()">
+            @if (!isLoading()) {
+              <span>Iniciar sesión</span>
+            } @else {
+              <span class="loader"></span>
+            }
+          </button>
+        </form>
+      } @else {
+        <!-- Register Form -->
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="animate-fade">
+          <div class="input-group" [class.invalid]="isValidField(registerForm, 'email')">
+            <input type="email" formControlName="email" placeholder="Correo Electrónico">
+          </div>
+          <div class="input-group" [class.invalid]="isValidField(registerForm, 'password')">
+            <input type="password" formControlName="password" placeholder="Contraseña">
+          </div>
+          <div class="row-inputs">
+            <div class="input-group" [class.invalid]="isValidField(registerForm, 'nombre')">
+              <input type="text" formControlName="nombre" placeholder="Nombre">
+            </div>
+            <div class="input-group" [class.invalid]="isValidField(registerForm, 'apellidos')">
+              <input type="text" formControlName="apellidos" placeholder="Apellidos">
+            </div>
+          </div>
+          <div class="input-group" [class.invalid]="isValidField(registerForm, 'phone')">
+            <input type="tel" formControlName="phone" placeholder="Teléfono">
+          </div>
+
+          <button type="submit" class="btn-primary" [disabled]="isLoading()">
+            @if (!isLoading()) {
+              <span>Registrarse</span>
+            } @else {
+              <span class="loader"></span>
+            }
+          </button>
+        </form>
+      }
+
+      @if (isLogin()) {
+        <div class="auth-footer">
+          <p>¿Olvidaste tu contraseña? <a href="#">Cambia tu contraseña</a></p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
