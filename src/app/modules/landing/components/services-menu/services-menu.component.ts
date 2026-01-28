@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, inject, NgZone, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface CarouselItem {
   img: string;
@@ -10,7 +11,7 @@ interface CarouselItem {
 @Component({
   selector: 'app-services-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './services-menu.component.html',
   styleUrls: ['./services-menu.css']
 })
