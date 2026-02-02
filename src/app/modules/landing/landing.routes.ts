@@ -10,5 +10,9 @@ export const landingRoutes: Routes = [
   {
     path: 'services',
     component: ServicesComponent
+  },
+  {
+    path: 'services/:id',
+    loadComponent: () => import('./pages/service-detail/service-detail.component').then(m => m.ServiceDetailComponent)
   }
 ];

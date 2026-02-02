@@ -28,12 +28,12 @@ export class ServicesMenuComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'Desarrollo de Web Apps',
       img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80',
-      url: '/#'
+      url: '/services/web-apps'
     },
     {
       name: 'Diseño UX/UI Avanzado',
       img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80',
-      url: '/#'
+      url: '/services/branding'
     }
   ];
 
