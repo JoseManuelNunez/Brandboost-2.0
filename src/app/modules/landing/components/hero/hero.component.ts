@@ -13,6 +13,13 @@ import { ServicesMenuComponent } from '../services-menu/services-menu.component'
 export class HeroComponent {
   private router = inject(Router);
   isServicesMenuOpen = false;
+  title = "Trabaja mejor con BrandBoost";
+  titleWords = this.title.split(' ').map(word => ({
+    text: word,
+    chars: word.split('')
+  }));
+
+
 
   navegarLogin() {
     this.router.navigate(['/auth/login']);

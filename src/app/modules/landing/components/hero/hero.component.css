@@ -1,9 +1,192 @@
 /* Hero Component Styles */
 
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .header-blur {
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.50);
   background: linear-gradient(91deg, rgba(255, 255, 255, 0.20) 6.45%, rgba(255, 255, 255, 0.02) 79.76%);
   box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(20px);
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/assets/fondos/fondo_nave.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* --- Navigation --- */
+.nav-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    padding: 0.5rem 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+/* --- Main Content --- */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    min-height: 80vh;
+    padding-top: 100px; /* Space for header */
+}
+
+/* Typography Animation */
+.animated-text {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 4rem; /* Big text */
+    font-weight: 700;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+    row-gap: 0.5rem; /* Gap between lines when wrapped */
+}
+
+.char-span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: textReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.char-space {
+    display: inline-block;
+    width: 0.3em;
+}
+
+@keyframes textReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.btn-login {
+    background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-login:hover {
+    transform: translateY(-1px);
+}
+
+/* Rocket Animation */
+.rocket-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatRocket 6s ease-in-out infinite;
+}
+
+.rocket-svg {
+    width: 100%;
+    max-width: 400px;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+@keyframes floatRocket {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+/* Bottom Wave */
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding-top: 150px;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .animated-text {
+        justify-content: center;
+        font-size: 3rem;
+    }
+    
+    .rocket-container {
+        height: 300px;
+        order: -1; /* Rocket on top on mobile? Or bottom? */
+    }
+    
+    .nav-pill {
+        display: none; /* Hide pill nav on mobile, use burger or existing */
+    }
 }

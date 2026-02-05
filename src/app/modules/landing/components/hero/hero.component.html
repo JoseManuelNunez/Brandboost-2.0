@@ -1,6 +1,8 @@
-<section class="relative w-full min-h-screen bg-cover bg-center font-sans" style="background-image: url('/assets/fondos/fondo_nave.jpg');">
+<section class="hero-section">
 
-  <header class="absolute top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-start md:items-center">
+
+  <!-- Header -->
+  <header class="absolute top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-start md:items-center ">
     
     <div class="flex flex-col cursor-pointer" (click)="navegarInicio()">
       <div class="flex items-center gap-1">
@@ -29,17 +31,32 @@
       Iniciar sesión
     </button>
   </header>
-  <div class="absolute bottom-20 container mx-auto h-full flex items-end px-6 md:px-12 pb-24">
-    <div class="max-w-xl z-10">
-      <h1 class="text-white text-sm font-normal leading-snug mb-8 tracking-wide">
-        Nunca te pierdas al hacer crecer tu marca.
+
+  <!-- Main Content -->
+  <div class=" max-w-6xl container mt-40 md:ml-20 hero-content px-6 md:px-12">
+    <!-- Left Column: T1ext -->
+    <div>
+      <h1 class="animated-text">
+        <span class="word-wrapper inline-block whitespace-nowrap mr-3" *ngFor="let word of titleWords; let wIndex = index">
+           <span class="char-span inline-block" *ngFor="let char of word.chars; let cIndex = index"
+                 [style.animation-delay]="(wIndex * 0.2 + cIndex * 0.05) + 's'">
+             {{char}}
+           </span>
+        </span>
       </h1>
       
-      <button class="bg-gradient-to-r from-yellow-400 to-amber-500 hover:scale-105 active:scale-95 text-black font-medium text-lg px-8 py-3 rounded-xl shadow-xl shadow-yellow-500/10 transition-all">
+      <p class="hero-subtitle">
+        Nunca te pierdas al hacer crecer tu marca.
+      </p>
+
+      <button class="btn-primary">
         Comencemos
       </button>
     </div>
+
+
   </div>
+
 
 </section>
 
