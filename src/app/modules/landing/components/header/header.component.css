@@ -7,3 +7,20 @@
   box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.20);
   backdrop-filter: blur(20px);
 }
+
+.mobile-menu-blur {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: linear-gradient(145deg, rgba(20, 10, 50, 0.95) 23.17%, rgba(10, 5, 30, 0.98) 78.41%);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(30px);
+}
+
+.mobile-menu-enter {
+  animation: slideInType 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInType {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
